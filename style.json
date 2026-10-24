@@ -180,7 +180,6 @@
           ]
         ],
         "fill-opacity": ["interpolate", ["linear"], ["zoom"], 3, 0.78, 6, 1],
-        "fill-layer-opacity": 1
       }
     },
     {
@@ -218,7 +217,7 @@
           6,
           0.9,
           9,
-          1.4
+          1
         ]
       }
     },
@@ -276,9 +275,8 @@
       "paint": {
         "line-color": "rgba(243, 9, 9, 1)",
         "line-dasharray": [3, 1.5],
-        "line-opacity": 1,
         "line-width": 1,
-        "line-layer-opacity": [
+        "line-opacity": [
           "interpolate",
           ["linear"],
           ["zoom"],
@@ -300,8 +298,6 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "water_name",
-      "minzoom": 24,
-      "maxzoom": 0,
       "layout": {
         "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
         "text-font": ["Noto Sans Italic"],
@@ -339,8 +335,6 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "place",
-      "minzoom": 24,
-      "maxzoom": 0,
       "filter": ["==", ["get", "class"], "village"],
       "layout": {
         "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
