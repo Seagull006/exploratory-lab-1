@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ecologies of British Columbia</title>
+  <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    #map { position: absolute; inset: 0; }
+    #title { position: absolute; top: 15px; left: 15px; z-index: 1;
+             background: white; padding: 12px; border-radius: 5px;
+             box-shadow: 0 1px 4px #999; max-width: 235px; }
+    h1 { font-size: 18px; margin: 0 0 6px; }
+    #title p { font-size: 12px; margin: 0; line-height: 1.5; }
+    #legend { position: absolute; bottom: 20px; left: 15px; z-index: 1;
+              background: white; padding: 8px 12px; border-radius: 5px;
+              box-shadow: 0 1px 4px #999; font-size: 12px; }
+    #legend summary { cursor: pointer; }
+    #legend div { margin-top: 8px; }
+    .swatch { display: inline-block; width: 12px; height: 12px;
+              margin-right: 6px; vertical-align: middle; }
+    .maplibregl-popup-content { font: 13px/1.5 Arial, sans-serif; max-width: 240px; }
+    .maplibregl-popup-content p { margin: 7px 0 0; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="title">
+    <h1>An Ecological Guide To British Columbia</h1>
+    <p>Ecoregions (subdivisions of ecoprovinces) of British Columbia. Colours show broad ecozones;
+       borders distinguish ecoregions. Click a region to learn more.</p>
+  </div>
+  <details id="legend">
+    <summary>Ecozone colours</summary>
+    <div><span class="swatch" style="background:#6da699"></span>Pacific Maritime</div>
+    <div><span class="swatch" style="background:#d3b98f"></span>Montane Cordillera</div>
+    <div><span class="swatch" style="background:#9eafbf"></span>Boreal Cordillera</div>
+    <div><span class="swatch" style="background:#b7c39a"></span>Boreal Plains</div>
+    <div><span class="swatch" style="background:#9fb4a5"></span>Taiga Plains</div>
+  </details>
+  <script>
+    // Basemap and ecological region colours are styled in Maputnik (style.json).
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'style.json',
+      center: [-125.5, 54.5],
+      zoom: 5
+    });
+    map.addControl(new maplibregl.NavigationControl());
+
+    // General descriptions of the five broad ecozones on this map.
+    const descriptions = {
+      'Pacific Maritime': 'A coastal environment influenced by the Pacific Ocean, with high rainfall in many areas, temperate forests, and rugged coastal mountains.',
+      'Montane Cordillera': 'Interior mountains, high plateaus, and valleys. Rain shadows and changes in elevation produce a wide variety of forests, grasslands, and alpine environments.',
+      'Boreal Cordillera': 'Northern mountain landscapes with extensive boreal forests in valleys and subalpine or tundra environments at higher elevations.',
+      'Boreal Plains': 'Broad northern plains and lowlands with boreal forests, lakes, wetlands, and relatively gentle terrain.',
+      'Taiga Plains': 'Northern lowlands characterized by cold conditions, wetlands, open northern forests, and in some areas permafrost.'
+    };
+
+    map.on('load', () => {
+      map.on('click', 'ecoregion-fill', e => {
+        const region = e.features[0].properties;
+        const name = document.createElement('strong');
+        name.textContent = region.name;
+        const category = document.createElement('p');
+        category.textContent = 'Ecozone: ' + region.ecozone;
+        const description = document.createElement('p');
+        description.textContent = descriptions[region.ecozone] || '';
+        const content = document.createElement('div');
+        content.append(name, category, description);
+        new maplibregl.Popup().setLngLat(e.lngLat).setDOMContent(content).addTo(map);
+      });
+      map.on('mouseenter', 'ecoregion-fill', () => map.getCanvas().style.cursor = 'pointer');
+      map.on('mouseleave', 'ecoregion-fill', () => map.getCanvas().style.cursor = '');
+    });
+  </script>
+</body>
+</html>
