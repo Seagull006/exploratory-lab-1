@@ -17,7 +17,7 @@
     },
     "ecoregions": {
       "type": "geojson",
-      "data": "https://seagull006.github.io/seagull006-web/bc_ecoregions.geojson",
+      "data": "https://seagull006.github.io/exploratory-lab-1/bc_ecoregions.geojson",
       "attribution": "Agriculture and Agri-Food Canada \u2014 National Ecological Framework, Ecoregions"
     }
   },
