@@ -56,6 +56,59 @@
       'Boreal Plains': 'Broad northern plains and lowlands with boreal forests, lakes, wetlands, and relatively gentle terrain.',
       'Taiga Plains': 'Northern lowlands characterized by cold conditions, wetlands, open northern forests, and in some areas permafrost.'
     };
+    
+const ecoregionDescriptions = {
+  // Taiga Plains
+  64: "A low-lying northern landscape of slow rivers, spruce forests and extensive peatlands. Poor drainage and a cold climate allow bogs and wetlands to occupy much of the terrain.",
+  65: "Rolling uplands and broad valleys support boreal spruce, pine and aspen forests. Cool conditions, glacial deposits and poorly drained hollows create a patchwork of woodland, lakes and muskeg.",
+  66: "This northern plateau lies along the outer foothills of the Rocky Mountains. Boreal conifers cover many slopes, while exposed ridges, cold conditions and wetlands create a varied landscape.",
+  // Boreal Plains
+  137: "A wooded upland north of the Peace River, where plains gradually give way to Rocky Mountain foothills. Spruce, lodgepole pine and wet valley forests reflect its transitional elevation and drainage.",
+  138: "The Peace River and its tributaries cross broad, relatively warm northern lowlands. Aspen and mixedwood forests, river valleys and cultivated land contrast with the colder uplands nearby.",
+  143: "A broad boreal landscape of spruce and aspen woodland, lakes and peat-filled depressions. Gentle relief and limited drainage help create extensive wetlands among the forested areas.",
+  145: "Rolling foothills along the eastern Rockies support mixedwood and conifer forests. Changing elevation, cool conditions and wet valleys distinguish these uplands from the flatter boreal plains farther east.",
+  // Boreal Cordillera
+  173: "The towering St. Elias Mountains contain steep slopes, extensive snowfields and glaciers. Severe high-elevation conditions leave much of the landscape sparsely vegetated, with forests mostly confined to lower valleys.",
+  177: "Sheltered southern Yukon valleys contain lakes, relatively dry forests and occasional open grassland. Surrounding mountains influence precipitation, creating a colder, drier environment than the Pacific coast.",
+  178: "Mountain ridges and valleys of the Pelly Mountains support spruce forests at lower elevations. As elevation increases, these give way to subalpine shrubs, alpine tundra and exposed rock.",
+  179: "Highlands near the Yukon-Stikine region combine broad uplands, river valleys and mountain slopes. Short growing seasons favour boreal forests in sheltered areas and tundra-like vegetation on exposed heights.",
+  180: "Northern plateaus and mountains form a patchwork of spruce and pine forests, wetlands and alpine areas. Elevation and cold interior conditions produce strong contrasts between valleys and uplands.",
+  181: "The broad Liard River basin is more subdued than the mountain country around it. Forested lowlands, meandering rivers and wetlands reflect its basin topography and cold northern climate.",
+  182: "The Hyland Highland is a rugged northern upland of forested valleys and open high country. Cold temperatures and elevation limit tree growth on exposed ridges while spruce woodland persists below.",
+  183: "Steep northern Rocky Mountain ranges rise above forested valleys. Changing elevation creates a sequence from boreal and subalpine forests to alpine meadows, rock and snow.",
+  // Pacific Maritime
+  185: "These steep coastal mountains run along the Alaska-British Columbia boundary. Moist Pacific air, heavy snowfall and high elevations support glaciers and alpine terrain above forested lower slopes.",
+  187: "The Nass Basin is a sheltered, comparatively low-elevation corridor between coastal mountain ranges. Moist conifer forests and river valleys mark its transition between maritime and interior conditions.",
+  188: "Rugged mountains on Haida Gwaii intercept moist Pacific air, supporting dense coastal forests. Wind-exposed ridges and higher slopes contrast sharply with the sheltered forested valleys below.",
+  189: "The lower-lying landscapes of Haida Gwaii include coastal forests, bogs and wetlands. Mild maritime conditions and poor drainage favour moisture-loving vegetation across flatter terrain.",
+  190: "The Nass Ranges form a mountainous transition east of the wet outer coast. Forested lower slopes lead toward colder subalpine environments, with precipitation and vegetation changing across the ranges.",
+  191: "Lower coastal mountains, channels and valleys create a gap in the otherwise rugged Coast Mountains. Pacific moisture supports temperate conifer forests, while rivers and inlets shape the landscape.",
+  192: "The Pacific Ranges are a steep, wet section of the southern Coast Mountains. Rainforest occurs in lower valleys, while heavy snow, glaciers and alpine terrain dominate higher elevations.",
+  193: "The windward side of Vancouver Island receives abundant Pacific rainfall. Temperate rainforest, steep valleys and coastal inlets reflect its mild, very wet maritime environment.",
+  194: "Eastern Vancouver Island lies partly in the rain shadow of the island's mountains. Its warmer, drier lowlands support Douglas-fir forests and, in some places, Garry oak ecosystems.",
+  195: "The Gulf Islands and adjacent sheltered coast have relatively dry summers and mild, wet winters. Douglas-fir, arbutus and locally Garry oak reflect the distinctive rain-shadow climate.",
+  196: "The Fraser River has built broad floodplains and wetlands along this sheltered coastal lowland. A mild climate supports productive forests, but urban growth and agriculture have extensively transformed the landscape.",
+  197: "The Cascade Ranges form a steep transition between the moist coast and drier interior. Forests change with elevation and exposure, giving way to subalpine and alpine environments near the highest peaks.",
+  // Montane Cordillera
+  198: "The Skeena Mountains sit between the wetter Coast Mountains and drier interior ranges. Forests change from cedar-hemlock at lower elevations to spruce-fir and alpine vegetation on higher slopes.",
+  199: "These northern interior mountains are cooler and generally drier than ranges near the coast. Sub-boreal spruce, pine and aspen at lower elevations give way to subalpine forest and alpine tundra.",
+  200: "The central Canadian Rockies contain steep ridges, glacial valleys and high alpine terrain. Mountain climate and elevation separate lower conifer forests from subalpine meadows, bare rock and snow.",
+  201: "The Bulkley Ranges combine rugged interior mountains with forested valleys. Their position between maritime and continental climates produces a mix of moist montane forest, subalpine woodland and alpine slopes.",
+  202: "An extensive, gently rolling interior plateau is dotted with lakes, wetlands and forest. Its comparatively dry continental climate supports pine, spruce and aspen, with open areas in some valleys.",
+  203: "The Fraser Basin contains broad river valleys and lowlands around the upper Fraser system. Cooler interior forests, floodplains and agricultural clearings reflect its lower relief and river-shaped terrain.",
+  204: "The Chilcotin Ranges rise along the eastern side of the Coast Mountains. Rain-shadow effects and elevation create contrasts between drier interior forests and alpine environments on high ridges.",
+  205: "The Columbia Mountains contain deep valleys, steep slopes and unusually moist interior forests. Cedar-hemlock forests can grow in sheltered valleys, while spruce-fir woodland, snow and glaciers occur higher up.",
+  206: "Western slopes of the continental mountain ranges receive more moisture than areas farther east. Forested valleys grade into subalpine vegetation and rocky alpine ridges as elevation rises.",
+  207: "The eastern continental ranges lie along the drier side of the Rocky Mountains. Steep limestone slopes, montane conifers and alpine terrain reflect both elevation and the continental climate.",
+  208: "These ranges link the Coast Mountains with the drier Interior Plateau. Rain shadows, mountain passes and elevation changes produce a mix of dry valleys, conifer forests and alpine slopes.",
+  209: "Warm, relatively dry valleys and plateaus define the Thompson-Okanagan. Rain-shadow conditions favour grasslands, shrub-steppe and open pine or Douglas-fir forests, while higher elevations support denser woodland.",
+  210: "The Okanogan Range rises above the dry southern interior. Elevation and exposure create a contrast between lower, drier conifer forests and cooler subalpine landscapes near the crest.",
+  211: "The Okanogan Highland is a landscape of rounded mountains, valleys and forested uplands. Dry lower slopes and grassland openings contrast with cooler, denser conifer forests at higher elevations.",
+  212: "Forested foothills and lower mountains near the Selkirk and Bitterroot ranges form a transition toward the interior lowlands. Changing slope, aspect and moisture create a varied mosaic of conifer forests and openings.",
+  213: "The Southern Rocky Mountain Trench is a long, relatively low corridor between major mountain systems. River valleys, wetlands and comparatively dry forested slopes contrast with the steep ranges beside it.",
+  214: "High mountain ridges near the northern continental divide separate major drainage systems. Subalpine forest gives way to alpine meadows, bare rock and snow where elevation and exposure limit tree growth."
+};
+
 
     map.on('load', () => {
       map.on('click', 'ecoregion-fill', e => {
@@ -65,7 +118,9 @@
         const category = document.createElement('p');
         category.textContent = 'Ecozone: ' + region.ecozone;
         const description = document.createElement('p');
-        description.textContent = descriptions[region.ecozone] || '';
+        description.textContent = 
+          ecoregionDescriptions[region.ecoregion_id] ||
+          descriptions[region.ecozone] || '';
         const content = document.createElement('div');
         content.append(name, category, description);
         new maplibregl.Popup().setLngLat(e.lngLat).setDOMContent(content).addTo(map);
