@@ -184,7 +184,6 @@
           ]
         ],
         "fill-opacity": ["interpolate", ["linear"], ["zoom"], 3, 0.78, 6, 1],
-      }
     },
     {
       "id": "glacier-context",
