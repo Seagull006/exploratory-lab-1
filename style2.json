@@ -184,7 +184,6 @@
           ]
         ],
         "fill-opacity": ["interpolate", ["linear"], ["zoom"], 3, 0.78, 6, 1],
-        "fill-layer-opacity": 1
       }
     },
     {
@@ -280,9 +279,8 @@
       "paint": {
         "line-color": "rgba(243, 9, 9, 1)",
         "line-dasharray": [3, 1.5],
-        "line-opacity": 1,
         "line-width": 1,
-        "line-layer-opacity": [
+        "line-opacity": [
           "interpolate",
           ["linear"],
           ["zoom"],
